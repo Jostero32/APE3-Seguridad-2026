@@ -2,8 +2,8 @@ version: '3.8'
 services:
   backend:
     build:
-      context: .
-      dockerfile: ./Backend/DockerFile
+      context: ./Backend
+      dockerfile: DockerFile
     environment:
       DB_NAME: usuarios
       DB_USER: jostero32
