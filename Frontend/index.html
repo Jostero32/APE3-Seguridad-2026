@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>APE3 Seguridad | Login</title>
+
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="card login-card">
+        <div class="card-header">
+          <span class="badge">APE3 Seguridad 2026</span>
+          <h1>Gestor de Usuarios</h1>
+          <p>Aplicación vulnerable para práctica académica con Burp Suite.</p>
+        </div>
+
+        <form id="loginForm" class="form">
+          <div class="field">
+            <label for="email">Correo</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              value="usuario@test.com"
+              required
+            />
+          </div>
+
+          <div class="field">
+            <label for="password">Contraseña</label>
+            <input
+              id="password"
+              name="password"
+              type="password"
+              value="pass123"
+              required
+            />
+          </div>
+
+          <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+
+          <button type="button" class="btn btn-secondary" id="loginAdminBtn">
+            Entrar como admin de prueba
+          </button>
+        </form>
+
+        <div class="test-users">
+          <h2>Usuarios de prueba</h2>
+
+          <div class="user-box">
+            <strong>Admin</strong>
+            <span>admin@test.com / admin123</span>
+          </div>
+
+          <div class="user-box">
+            <strong>Usuario</strong>
+            <span>usuario@test.com / pass123</span>
+          </div>
+        </div>
+
+        <pre id="messageBox" class="message-box hidden"></pre>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

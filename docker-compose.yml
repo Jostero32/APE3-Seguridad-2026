@@ -1,14 +1,17 @@
-version: '3.8'
+version: "3.8"
+
 services:
   backend:
     build:
-      context: .
-      dockerfile: ./Backend/DockerFile
+      context: ./Backend
+      dockerfile: DockerFile
+    container_name: ape3-backend
     environment:
       DB_NAME: usuarios
       DB_USER: jostero32
       DB_PASS: "1234"
       DB_HOST: db-postgres
+      DB_PORT: 5432
       PORT: 3000
     depends_on:
       db-postgres:
@@ -18,6 +21,7 @@ services:
 
   db-postgres:
     image: postgres:15
+    container_name: ape3-postgres
     environment:
       POSTGRES_DB: usuarios
       POSTGRES_USER: jostero32

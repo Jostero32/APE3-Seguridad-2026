@@ -1,5 +1,5 @@
 {
-  "name": "Proyecto sin IA",
+  "name": "ape3-seguridad-backend",
   "version": "1.0.0",
   "description": "Gestor de usuarios HTTP simple en Node.js sin frameworks, rutas inline",
   "main": "server.js",
@@ -9,10 +9,15 @@
     "dev": "node --env-file=.env server.js"
   },
   "dependencies": {
+    "dotenv": "^17.4.2",
     "pg": "^8.13.3"
   },
-  "keywords": ["node", "http", "rest", "sin-framework"],
+  "keywords": [
+    "node",
+    "http",
+    "rest",
+    "sin-framework"
+  ],
   "author": "",
   "license": "MIT"
 }
-

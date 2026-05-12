@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>APE3 Seguridad | Dashboard</title>
+
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="card wide-card">
+        <div class="topbar">
+          <div>
+            <span class="badge">Panel de usuario</span>
+            <h1>Dashboard</h1>
+            <p>
+              Aquí se consulta la sesión actual y se actualizan datos del
+              usuario.
+            </p>
+          </div>
+
+          <div class="actions">
+            <a class="btn btn-secondary" href="./admin.html"
+              >Ir a administración</a
+            >
+            <button class="btn btn-danger" id="logoutBtn">Cerrar sesión</button>
+          </div>
+        </div>
+
+        <div class="grid">
+          <section class="panel">
+            <h2>Usuario autenticado</h2>
+            <p class="muted">Esta información se obtiene desde:</p>
+            <code>GET /usuarios/me</code>
+
+            <div id="profileBox" class="profile-box">
+              Cargando información...
+            </div>
+          </section>
+
+          <section class="panel">
+            <h2>Actualizar perfil</h2>
+            <p class="muted">
+              Petición usada para la práctica de manipulación con Burp:
+            </p>
+            <code>PUT /usuarios/me</code>
+
+            <form id="updateProfileForm" class="form">
+              <div class="field">
+                <label for="nombre">Nombre</label>
+                <input
+                  id="nombre"
+                  name="nombre"
+                  type="text"
+                  placeholder="Nuevo nombre"
+                />
+              </div>
+
+              <div class="field">
+                <label for="email">Correo</label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder="nuevo@email.com"
+                />
+              </div>
+
+              <div class="field">
+                <label for="password">Nueva contraseña</label>
+                <input
+                  id="password"
+                  name="password"
+                  type="text"
+                  placeholder="Opcional"
+                />
+              </div>
+
+              <button type="submit" class="btn btn-primary">
+                Actualizar perfil
+              </button>
+            </form>
+
+            <div class="warning-box">
+              <strong>Práctica con Burp:</strong>
+              intercepta esta petición y agrega el campo
+              <code>"rol": "admin"</code>
+              al JSON para demostrar la vulnerabilidad.
+            </div>
+          </section>
+        </div>
+
+        <pre id="messageBox" class="message-box hidden"></pre>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
